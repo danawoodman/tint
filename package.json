@@ -2,11 +2,10 @@
   "name": "tint",
   "version": "1.0.0",
   "description": "Open-source menu bar (status menu) color picker for OSX.",
-  "main": "main.js",
+  "main": "src/boot.js",
   "scripts": {
-    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.35.0 --icon=Tint.icns --ignore='node_modules/(electron-packager|electron-prebuilt|babel-cli|babel-plugin-transform-react-jsx|babel-preset-es2015|babel-plugin-syntax-jsx)'",
-    "transpile": "babel -o build.js web.js",
-    "start": "npm run transpile && electron main.js"
+    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.35.0 --icon=Tint.icns --ignore='node_modules/(electron-packager|electron-prebuilt|electron-compilers|electron-compile)'",
+    "start": "electron src/boot.js"
   },
   "repository": {
     "type": "git",
@@ -38,14 +37,12 @@
   },
   "homepage": "https://github.com/danawoodman/tint#readme",
   "devDependencies": {
-    "babel-cli": "6.1.18",
-    "babel-plugin-syntax-jsx": "6.1.18",
-    "babel-plugin-transform-react-jsx": "6.1.18",
-    "babel-preset-es2015": "6.1.18",
+    "electron-compilers": "1.0.1",
     "electron-packager": "5.1.1",
     "electron-prebuilt": "0.35.0"
   },
   "dependencies": {
+    "electron-compile": "1.0.1",
     "menubar": "2.3.0",
     "react": "0.14.2",
     "react-color": "1.2.1",
