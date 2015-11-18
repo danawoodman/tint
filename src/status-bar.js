@@ -102,6 +102,8 @@ module.exports = (app) => {
   const tray = new Tray(ICON)
   const window = create()
 
+  app.on('browser-window-blur', (event, win) => hide(win))
+
   tray
       .on('click', (e, bounds) => toggleWindow(window, bounds))
       .on('double-click', (e, bounds) => toggleWindow(window, bounds))
