@@ -6,7 +6,7 @@ A not-so-sucky color picker status bar for OSX, Windows and Linux.
 
 ![](http://cl.ly/dqYN/Screen%20Shot%202015-11-17%20at%206.10.19%20PM.png)
 
-A global shortcut to open the color picker is set to `Control + Option + Command + c` on Mac and `Control + Alt + Window + c`.
+A global shortcut to open the color picker is set to `Shift + Command + c` on Mac and `Shift + Control + c` on Windows.
 
 
 ## Download
@@ -20,10 +20,10 @@ If you are indeed a cheap person or want to try before you buy, you can also dow
 **[Download the latest release here](https://github.com/danawoodman/tint/releases)**
 
 
-## Wishlist
+## Features
 
-- [ ] Config for default value (HEX, RGBA, etc)
-- [ ] Config for auto closing on blur
+- Support opacity and hue.
+- Global shortcut (`ctrl+alt+super+c`).
 
 Something else you'd like to see? Create an issue!
 

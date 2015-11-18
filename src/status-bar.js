@@ -102,7 +102,7 @@ module.exports = (app) => {
     statusbar.app.quit()
   }
 
-  function toggleWindow(bounds) {
+  statusbar.toggleWindow = (bounds) => {
 
     console.log(`Tray clicked and window is ${statusbar.window.isVisible() ? 'visible' : 'hidden'}`)
 
@@ -116,8 +116,8 @@ module.exports = (app) => {
   statusbar.app.on('browser-window-blur', (event, win) => statusbar.hide(win))
 
   statusbar.tray
-      .on('click', (e, bounds) => toggleWindow(bounds))
-      .on('double-click', (e, bounds) => toggleWindow(bounds))
+      .on('click', (e, bounds) => statusbar.toggleWindow(bounds))
+      .on('double-click', (e, bounds) => statusbar.toggleWindow(bounds))
       .on('right-click', (e, bounds) => statusbar.menu.popup(statusbar.window))
 
   return statusbar

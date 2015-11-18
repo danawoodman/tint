@@ -7,7 +7,7 @@ const app = electron.app
 const globalShortcut = electron.globalShortcut
 
 // TODO: Make this configurable
-const GLOBAL_SHORTCUT = 'ctrl+alt+super+c'
+const GLOBAL_SHORTCUT = 'Shift+CmdOrCtrl+c'
 
 app.on('ready', () => {
 
@@ -27,7 +27,7 @@ app.on('ready', () => {
   // Register the global shortcut
   const registrationSuccess = globalShortcut.register(
     GLOBAL_SHORTCUT,
-    () => bar.show()
+    () => bar.toggleWindow(null)
   )
 
   if (!registrationSuccess) {
