@@ -4,7 +4,7 @@
   "description": "Open-source menu bar (status menu) color picker for OSX.",
   "main": "main.js",
   "scripts": {
-    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.34.1 --icon=tint.png",
+    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.34.1 --icon=Tint.icns",
     "transpile": "babel -o build.js web.js",
     "start": "npm run transpile && electron main.js",
     "test": "mocha",
