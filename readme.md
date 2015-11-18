@@ -9,7 +9,21 @@ A not-so-sucky color picker status bar for OSX, Windows and Linux.
 
 ## Download
 
+Consider supporting the development of Tint by buying it on the App Store (it's only $.99 you cheapo!):
+
+**COMING SOON!**
+
+If you are indeed a cheap person or want to try before you buy, you can also download the latest version here:
+
 **[Download the latest release here](https://github.com/danawoodman/tint/releases)**
+
+
+## Wishlist
+
+- [ ] Config for default value (HEX, RGBA, etc)
+- [ ] Config for auto closing on blur
+
+Something else you'd like to see? Create an issue!
 
 
 ## Development
