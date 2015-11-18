@@ -70,6 +70,8 @@ module.exports = (app) => {
   statusbar.window = createWindow()
   statusbar.menu = createMenu(statusbar.app)
 
+  statusbar.tray.setToolTip('Tint color picker')
+
   statusbar.show = (bounds) => {
 
     // Load passed in bounds or fallback to cached bounds.
