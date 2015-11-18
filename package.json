@@ -1,6 +1,6 @@
 {
   "name": "tint",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Open-source menu bar (status menu) color picker for OSX.",
   "main": "src/index.js",
   "scripts": {
