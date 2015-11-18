@@ -4,18 +4,12 @@
 
 A not-so-sucky color picker status bar for OSX, Windows and Linux.
 
-![](http://cl.ly/dqYN/Screen%20Shot%202015-11-17%20at%206.10.19%20PM.png)
+![](http://cl.ly/drFw/Screen%20Shot%202015-11-18%20at%201.56.51%20PM.png)
 
 A global shortcut to open the color picker is set to `Shift + Command + c` on Mac and `Shift + Control + c` on Windows.
 
 
 ## Download
-
-Consider supporting the development of Tint by buying it on the App Store (it's only $.99 you cheapo!):
-
-**COMING SOON!**
-
-If you are indeed a cheap person or want to try before you buy, you can also download the latest version here:
 
 **[Download the latest release here](https://github.com/danawoodman/tint/releases)**
 
