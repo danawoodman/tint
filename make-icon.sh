@@ -2,26 +2,28 @@
 
 # Make an app icon from pngs.
 
-# Name of iconset folder.
-NAME='Tint'
+cd src
 
 # Original PNG file, should be 512x512 pixels or larger.
-ORIGINAL='tint-fullsize'
+ORIGINAL='tint-fullsize.png'
 
-mkdir $NAME.iconset
+# Name of iconset folder.
+OUTPUT='Tint.iconset'
 
-sips -z 16 16     $ORIGINAL.png --out $NAME.iconset/icon_16x16.png
-sips -z 32 32     $ORIGINAL.png --out $NAME.iconset/icon_16x16@2x.png
-sips -z 32 32     $ORIGINAL.png --out $NAME.iconset/icon_32x32.png
-sips -z 64 64     $ORIGINAL.png --out $NAME.iconset/icon_32x32@2x.png
-sips -z 128 128   $ORIGINAL.png --out $NAME.iconset/icon_128x128.png
-sips -z 256 256   $ORIGINAL.png --out $NAME.iconset/icon_128x128@2x.png
-sips -z 256 256   $ORIGINAL.png --out $NAME.iconset/icon_256x256.png
-sips -z 512 512   $ORIGINAL.png --out $NAME.iconset/icon_256x256@2x.png
-sips -z 512 512   $ORIGINAL.png --out $NAME.iconset/icon_512x512.png
+mkdir $OUTPUT
 
-cp $ORIGINAL.png $NAME.iconset/icon_512x512@2x.png
+sips -z 16 16     $ORIGINAL --out $OUTPUT/icon_16x16.png
+sips -z 32 32     $ORIGINAL --out $OUTPUT/icon_16x16@2x.png
+sips -z 32 32     $ORIGINAL --out $OUTPUT/icon_32x32.png
+sips -z 64 64     $ORIGINAL --out $OUTPUT/icon_32x32@2x.png
+sips -z 128 128   $ORIGINAL --out $OUTPUT/icon_128x128.png
+sips -z 256 256   $ORIGINAL --out $OUTPUT/icon_128x128@2x.png
+sips -z 256 256   $ORIGINAL --out $OUTPUT/icon_256x256.png
+sips -z 512 512   $ORIGINAL --out $OUTPUT/icon_256x256@2x.png
+sips -z 512 512   $ORIGINAL --out $OUTPUT/icon_512x512.png
 
-iconutil -c icns $NAME.iconset
+cp $ORIGINAL $OUTPUT/icon_512x512@2x.png
 
-rm -R $NAME.iconset
+iconutil -c icns $OUTPUT
+
+rm -R $OUTPUT
