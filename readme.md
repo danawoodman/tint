@@ -1,4 +1,4 @@
-# ![](http://cl.ly/dqhb/tint@3x.png) Tint
+# ![](http://cl.ly/dqu3/tint@2x%206.10.01%20PM.png) Tint
 
 **NOTE: This is currently in beta and may break! If it does, please create an issue!**
 
