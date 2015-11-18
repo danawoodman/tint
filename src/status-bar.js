@@ -4,7 +4,6 @@ const extend = require('extend')
 const events = require('events')
 const electron = require('electron')
 const Positioner = require('electron-positioner')
-const contextMenu = require('./context-menu')
 
 const BrowserWindow = electron.BrowserWindow
 const Menu = electron.Menu
