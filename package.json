@@ -1,0 +1,58 @@
+{
+  "name": "tint",
+  "version": "1.0.0",
+  "description": "Open-source menu bar (status menu) color picker for OSX.",
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.34.1 --icon=tint.png",
+    "transpile": "babel -o build.js web.js",
+    "start": "npm run transpile && electron main.js",
+    "test": "mocha",
+    "watch": "watchy -w . -i '/\\.|/node_modules|\\.json|\\.md|\\.log$' -- electron main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danawoodman/tint.git"
+  },
+  "keywords": [
+    "color",
+    "picker",
+    "color",
+    "tint",
+    "menu",
+    "bar",
+    "status",
+    "bar",
+    "menu",
+    "status",
+    "picker",
+    "hex",
+    "rgb",
+    "rgba",
+    "utility",
+    "osx",
+    "app"
+  ],
+  "author": "Dana Woodman <dana@danawoodman.com> (http://danawoodman.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danawoodman/tint/issues"
+  },
+  "homepage": "https://github.com/danawoodman/tint#readme",
+  "devDependencies": {
+    "babel-cli": "6.1.18",
+    "babel-plugin-syntax-jsx": "6.1.18",
+    "babel-plugin-transform-react-jsx": "6.1.18",
+    "babel-preset-es2015": "6.1.18",
+    "electron-packager": "5.1.1",
+    "electron-prebuilt": "0.35.0",
+    "watchy": "0.6.5"
+  },
+  "dependencies": {
+    "menubar": "2.3.0",
+    "react": "0.14.2",
+    "react-color": "1.2.1",
+    "react-color-picker": "2.1.9",
+    "react-dom": "0.14.2"
+  }
+}
