@@ -4,6 +4,10 @@ const electron = require('electron')
 const statusbar = require('./status-bar')
 
 const app = electron.app
+const globalShortcut = electron.globalShortcut
+
+// TODO: Make this configurable
+const GLOBAL_SHORTCUT = 'ctrl+alt+super+c'
 
 app.on('ready', () => {
 
@@ -17,6 +21,29 @@ app.on('ready', () => {
   // Load the status bar.
   const bar = statusbar(app)
 
-  console.log('Created status bar:')
-  console.log(JSON.stringify(bar, null, '  '))
+  // Check whether a shortcut is registered.
+  console.log('The global shortcut is set?', globalShortcut.isRegistered(GLOBAL_SHORTCUT))
+
+  // Register the global shortcut
+  const registrationSuccess = globalShortcut.register(
+    GLOBAL_SHORTCUT,
+    () => bar.show()
+  )
+
+  if (!registrationSuccess) {
+    console.log('Shortcut registration failed')
+  }
+
+  app.on('will-quit', () => {
+
+    // Unregister a shortcut.
+    globalShortcut.unregister(GLOBAL_SHORTCUT)
+
+    // Unregister all shortcuts.
+    globalShortcut.unregisterAll()
+
+    // Close the statusbar cleanly.
+    bar.quit()
+  })
 })
+

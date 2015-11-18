@@ -23,7 +23,7 @@ if (!fs.existsSync(INDEX)) {
   throw Error(`index.html file "${INDEX}" does not exist!`)
 }
 
-function create() {
+function createWindow() {
 
   console.log(`Creating window sized ${WIDTH}x${HEIGHT} pixels.`)
 
@@ -44,41 +44,7 @@ function create() {
   return window
 }
 
-function show(window, bounds) {
-
-  console.log('Showing window at bounds:')
-  console.log(JSON.stringify(bounds, null, '  '))
-
-  const positioner = new Positioner(window)
-
-  const position = positioner.calculate('trayCenter', bounds)
-
-  const x = position.x
-  const y = position.y
-
-  console.log(`Setting window position to: ${x}x ${y}y`)
-
-  window.setPosition(x, y)
-
-  window.show()
-}
-
-function hide(window) {
-  window.hide()
-}
-
-function toggleWindow(window, bounds) {
-
-  console.log(`Tray clicked and window is ${window.isVisible() ? 'visible' : 'hidden'}`)
-
-  if (window && window.isVisible()) {
-    return hide(window)
-  }
-
-  show(window, bounds)
-}
-
-function showContextMenu(app, window) {
+function createMenu(app) {
 
   console.log('Opening the context menu...')
 
@@ -93,24 +59,66 @@ function showContextMenu(app, window) {
     },
   ])
 
-  menu.popup(window)
+  return menu
 }
 
 module.exports = (app) => {
-  const statusbar = new events.EventEmitter()
 
-  const tray = new Tray(ICON)
-  const window = create()
+  const statusbar = {}
+  statusbar.app = app
+  statusbar.tray = new Tray(ICON)
+  statusbar.window = createWindow()
+  statusbar.menu = createMenu(statusbar.app)
 
-  app.on('browser-window-blur', (event, win) => hide(win))
+  statusbar.show = (bounds) => {
 
-  tray
-      .on('click', (e, bounds) => toggleWindow(window, bounds))
-      .on('double-click', (e, bounds) => toggleWindow(window, bounds))
-      .on('right-click', (e, bounds) => showContextMenu(app, window))
+    // Load passed in bounds or fallback to cached bounds.
+    statusbar.bounds = bounds || statusbar.bounds
 
-  //statusbar.tray = tray
-  //statusbar.window = window
+    console.log('Showing window at bounds:')
+    console.log(JSON.stringify(statusbar.bounds, null, '  '))
+
+    const positioner = new Positioner(statusbar.window)
+
+    const position = positioner.calculate('trayCenter', statusbar.bounds)
+
+    const x = position.x
+    const y = position.y
+
+    console.log(`Setting window position to: ${x} x by ${y} y`)
+
+    statusbar.window.setPosition(x, y)
+
+    statusbar.window.show()
+  }
+
+  statusbar.hide = () => {
+    statusbar.window.hide()
+  }
+
+  statusbar.quit = () => {
+    statusbar.tray.destroy()
+    statusbar.window.close()
+    statusbar.app.quit()
+  }
+
+  function toggleWindow(bounds) {
+
+    console.log(`Tray clicked and window is ${statusbar.window.isVisible() ? 'visible' : 'hidden'}`)
+
+    if (statusbar.window && statusbar.window.isVisible()) {
+      return statusbar.hide()
+    }
+
+    statusbar.show(bounds)
+  }
+
+  statusbar.app.on('browser-window-blur', (event, win) => statusbar.hide(win))
+
+  statusbar.tray
+      .on('click', (e, bounds) => toggleWindow(bounds))
+      .on('double-click', (e, bounds) => toggleWindow(bounds))
+      .on('right-click', (e, bounds) => statusbar.menu.popup(statusbar.window))
 
   return statusbar
 }
