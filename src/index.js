@@ -1,10 +1,11 @@
+import path from 'path'
 import menubar from 'menubar'
 import contextMenu from './context-menu'
 
 const menu = menubar({
-  dir: process.cwd(),
+  dir: __dirname,
   height: 298,
-  icon: 'tint.png',
+  icon: path.join(__dirname, 'tint.png'),
   preloadWindow: true,
   width: 220,
 })

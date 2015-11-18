@@ -4,7 +4,7 @@
   "description": "Open-source menu bar (status menu) color picker for OSX.",
   "main": "src/boot.js",
   "scripts": {
-    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.35.0 --icon=Tint.icns --ignore='node_modules/(electron-packager|electron-prebuilt|electron-compilers|electron-compile)'",
+    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.35.0 --icon=src/Tint.icns --ignore='node_modules/(electron-packager|electron-prebuilt|electron-compilers)'",
     "start": "electron src/boot.js"
   },
   "repository": {
