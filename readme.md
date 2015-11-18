@@ -6,6 +6,8 @@ A not-so-sucky color picker status bar for OSX, Windows and Linux.
 
 ![](http://cl.ly/dqYN/Screen%20Shot%202015-11-17%20at%206.10.19%20PM.png)
 
+A global shortcut to open the color picker is set to `Control + Option + Command + c` on Mac and `Control + Alt + Window + c`.
+
 
 ## Download
 
