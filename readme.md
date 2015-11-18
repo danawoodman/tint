@@ -53,3 +53,5 @@ npm install --global electron-prebuilt
 ## Credits
 
 Created by Dana Woodman 2015. Released under an MIT license.
+
+Icon "tint" by useiconic.com from the Noun Project.
