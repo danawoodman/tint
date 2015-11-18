@@ -46,6 +46,8 @@
     "electron-prebuilt": "0.35.0"
   },
   "dependencies": {
+    "electron-positioner": "2.0.2",
+    "extend": "3.0.0",
     "menubar": "2.3.0",
     "react": "0.14.2",
     "react-color": "1.2.1",

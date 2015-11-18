@@ -1,17 +1,22 @@
+const fs = require('fs')
 const path = require('path')
-const menubar = require('menubar')
-const contextMenu = require('./context-menu')
+const electron = require('electron')
+const statusbar = require('./status-bar')
 
-const menu = menubar({
-  dir: __dirname,
-  height: 298,
-  icon: path.join(__dirname, 'tint.png'),
-  preloadWindow: true,
-  width: 220,
-})
+const app = electron.app
 
-menu.on('ready', () => {
-  console.log('App is ready!')
+app.on('ready', () => {
 
-  menu.tray.on('right-click', () => contextMenu(menu.app))
+  console.log('Application is ready!')
+
+  // Hide the dock.
+  if (app.dock) {
+    app.dock.hide()
+  }
+
+  // Load the status bar.
+  const bar = statusbar(app)
+
+  console.log('Created status bar:')
+  console.log(JSON.stringify(bar, null, '  '))
 })
