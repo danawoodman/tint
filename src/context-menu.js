@@ -1,6 +1,7 @@
-import { Menu } from 'electron'
+const electron = require('electron')
+const Menu = electron.Menu
 
-export default (app) => {
+module.exports = (app) => {
 
   console.log('Opening the context menu...')
 

@@ -1,6 +1,6 @@
-import path from 'path'
-import menubar from 'menubar'
-import contextMenu from './context-menu'
+const path = require('path')
+const menubar = require('menubar')
+const contextMenu = require('./context-menu')
 
 const menu = menubar({
   dir: __dirname,
