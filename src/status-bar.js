@@ -84,8 +84,8 @@ module.exports = (app) => {
 
     const position = positioner.calculate('trayCenter', statusbar.bounds)
 
-    const x = position.x
-    const y = position.y
+    const x = position.x || 0
+    const y = position.y || 0
 
     console.log(`Setting window position to: ${x} x by ${y} y`)
 
