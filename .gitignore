@@ -1,5 +1,14 @@
+# System files
 .DS_Store
+
+# Node files
 node_modules
+
+# Compiled JS.
 build.js
-Tint*
+
+# Build directories
+Tint-*
+
+# Don't ignore icon file
 !Tint.icns
