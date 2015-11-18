@@ -2,7 +2,7 @@
 
 # Make an app icon from pngs.
 
-cd src
+cd src/images
 
 # Original PNG file, should be 512x512 pixels or larger.
 ORIGINAL='tint-fullsize.png'

@@ -13,7 +13,7 @@ const HEIGHT = 298
 const WIDTH = 220
 const ROOT = __dirname
 const INDEX = path.join(ROOT, 'index.html')
-const ICON = path.join(ROOT, 'tint.png')
+const ICON = path.join(ROOT, 'images', 'tint.png')
 
 if (!fs.existsSync(ICON)) {
   throw Error(`Icon file "${ICON}" does not exist!`)

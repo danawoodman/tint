@@ -4,7 +4,7 @@
   "description": "Open-source menu bar (status menu) color picker for OSX.",
   "main": "src/main.js",
   "scripts": {
-    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.35.0 --icon=src/Tint.icns --ignore='node_modules/(electron-packager|electron-prebuilt|babel-cli|babel-plugin-transform-react-jsx|babel-preset-es2015|babel-plugin-syntax-jsx)'",
+    "build": "electron-packager . Tint --platform=darwin --arch=x64 --version=0.35.0 --icon=src/images/Tint.icns --ignore='node_modules/(electron-packager|electron-prebuilt|babel-cli|babel-plugin-transform-react-jsx|babel-preset-es2015|babel-plugin-syntax-jsx)'",
     "transpile": "babel -o src/build.js src/web.js",
     "start": "npm run transpile && electron src/main.js"
   },
@@ -48,7 +48,6 @@
   "dependencies": {
     "electron-positioner": "2.0.2",
     "extend": "3.0.0",
-    "menubar": "2.3.0",
     "react": "0.14.2",
     "react-color": "1.2.1",
     "react-dom": "0.14.2"

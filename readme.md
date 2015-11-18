@@ -9,6 +9,12 @@ A not-so-sucky color picker status bar for OSX, Windows and Linux.
 
 ## Download
 
+Consider supporting the development of Tint by buying it on the App Store (it's only $.99 you cheapo!):
+
+**COMING SOON!**
+
+If you are indeed a cheap person or want to try before you buy, you can also download the latest version here:
+
 **[Download the latest release here](https://github.com/danawoodman/tint/releases)**
 
 
@@ -62,6 +68,14 @@ Build a `Tint.app` file:
 
 ```shell
 npm run build
+```
+
+### Regenerate the Icon
+
+Create a new `Tint.icns` file by running the following script:
+
+```shell
+./scripts/make-icon
 ```
 
 
